@@ -1,0 +1,27 @@
+<div class="list row">
+    <div class="col-md-12">
+      <a class="btn btn-outline-secondary" routerLink="/add-service" style="float: right;">ADICIONAR NOVO SERVIÇO</a>
+      <br><br>
+    </div>
+    <div class="col-md-6">
+      <h4>Serviços</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let service of services; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActiveService(service, i)"
+        >
+          {{ service.Name }}
+          
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-6">
+      <app-service-details
+        [viewMode]="true"
+        [currentService]="currentService"
+      ></app-service-details>
+    </div>
+  </div>

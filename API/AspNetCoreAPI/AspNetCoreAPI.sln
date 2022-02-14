@@ -1,0 +1,37 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30320.27
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "AspNetCoreAPI", "AspNetCoreAPI.csproj", "{3F4BCBE3-2105-4CD2-9DD4-DE9C1C380CBF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DAL_CRUD", "..\DAL_CRUD\DAL_CRUD.csproj", "{61CA194E-1910-4029-9794-DA77865C5F70}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BAL_CRUD", "..\BAL_CRUD\BAL_CRUD.csproj", "{95EBAC18-60EF-42B6-9415-B9985CF7B2A0}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3F4BCBE3-2105-4CD2-9DD4-DE9C1C380CBF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F4BCBE3-2105-4CD2-9DD4-DE9C1C380CBF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F4BCBE3-2105-4CD2-9DD4-DE9C1C380CBF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F4BCBE3-2105-4CD2-9DD4-DE9C1C380CBF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{61CA194E-1910-4029-9794-DA77865C5F70}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{61CA194E-1910-4029-9794-DA77865C5F70}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{61CA194E-1910-4029-9794-DA77865C5F70}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{61CA194E-1910-4029-9794-DA77865C5F70}.Release|Any CPU.Build.0 = Release|Any CPU
+		{95EBAC18-60EF-42B6-9415-B9985CF7B2A0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{95EBAC18-60EF-42B6-9415-B9985CF7B2A0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{95EBAC18-60EF-42B6-9415-B9985CF7B2A0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{95EBAC18-60EF-42B6-9415-B9985CF7B2A0}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {392B605A-569C-4FEB-92AF-C7D17FF9AA67}
+	EndGlobalSection
+EndGlobal

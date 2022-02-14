@@ -1,0 +1,33 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="Nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            required
+            [(ngModel)]="service.Name"
+            name="nome"
+          />
+        </div>
+        <div class="form-group">
+            <label for="Nome">Descrição</label>
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              required
+              [(ngModel)]="service.Description"
+              name="description"
+            />
+          </div>
+        <button (click)="saveService()" class="btn btn-success">Salvar</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Novo serviço adicionado com sucesso!</h4>
+        <button class="btn btn-success" (click)="newService()">Adicionar</button>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,44 @@
+<div>
+    <div class="submit-form">
+      <div *ngIf="!submitted">
+        <div class="form-group">
+          <label for="UserName">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="UserName"
+            required
+            [(ngModel)]="person.UserName"
+            name="UserName"
+          />
+        </div>
+        <div class="form-group">
+            <label for="UserEmail">E-mail</label>
+            <input
+              class="form-control"
+              id="UserEmail"
+              required
+              type="email"
+              [(ngModel)]="person.UserEmail"
+              name="UserEmail"
+            />
+        </div>
+        <div class="form-group">
+          <label for="UserPassword">Senha</label>
+          <input
+            class="form-control"
+            id="UserPassword"
+            required
+            type="password"
+            [(ngModel)]="person.UserPassword"
+            name="UserPassword"
+          />
+        </div>
+        <button (click)="savePerson()" class="btn btn-success">Salvar</button>
+      </div>
+      <div *ngIf="submitted">
+        <h4>Novo integrante de equipe adicionado com sucesso!</h4>
+        <button class="btn btn-success" (click)="newPerson()">Adicionar</button>
+      </div>
+    </div>
+  </div>

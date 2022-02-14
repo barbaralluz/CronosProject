@@ -1,0 +1,53 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentPost.Id">
+      <h4>Post</h4>
+      <div>
+         {{ currentPost.Description }}
+      </div>
+      <h4>
+      <a
+        class="badge badge-warning"
+        routerLink="/posts/{{ currentPost.Id }}"
+      >
+        Editar
+      </a>
+    </h4>
+    </div>
+    <div *ngIf="!currentPost">
+      <br />
+      <p>Selecione um post</p>
+    </div>
+  </div>
+  <ng-template #editable>
+    <div *ngIf="currentPost.Id" class="edit-form">
+      <h4>Post</h4>
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="post"
+            [(ngModel)]="currentPost.Description"
+            name="post"
+          />
+        </div>
+      </form>
+      <h4>
+      <button class="badge badge-danger mr-2" (click)="deletePost()">
+        Remover
+      </button>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updatePost()"
+      >
+        Atualizar
+      </button>
+    </h4>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentPost.Id">
+      <br />
+      <p>Não é possível acessar este post</p>
+    </div>
+  </ng-template>

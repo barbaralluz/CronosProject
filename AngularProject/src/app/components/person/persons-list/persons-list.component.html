@@ -1,0 +1,46 @@
+<div class="list row">
+    <div class="col-md-8">
+      <div class="input-group mb-3">
+        <input
+          type="text"
+          class="form-control"
+          placeholder="Busque o integrante pelo nome"
+          [(ngModel)]="name"
+        />
+        <div class="input-group-append">
+          <button
+            class="btn btn-outline-secondary"
+            type="button"
+            (click)="searchPerson()"
+          >
+            Buscar
+          </button>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-12">
+      <a class="btn btn-outline-secondary" routerLink="/add-person" style="float: right;">ADICIONAR NOVO INTEGRANTE</a>
+      <br><br>
+    </div>
+    <div class="col-md-6">
+      <h4>Integrantes da Equipe</h4>
+      <ul class="list-group">
+        <li
+          class="list-group-item"
+          *ngFor="let person of persons; let i = index"
+          [class.active]="i == currentIndex"
+          (click)="setActivePerson(person, i)"
+        >
+          {{ person.UserName }}
+          
+        </li>
+      </ul>
+
+    </div>
+    <div class="col-md-6">
+      <app-person-details
+        [viewMode]="true"
+        [currentPerson]="currentPerson"
+      ></app-person-details>
+    </div>
+  </div>

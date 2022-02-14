@@ -1,0 +1,62 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentService.Id">
+      <h4>Serviço</h4>
+      <div>
+         {{ currentService.Description }}
+      </div>
+      <h4>
+      <a
+        class="badge badge-warning"
+        routerLink="/services/{{ currentService.Id }}"
+      >
+        Editar
+      </a>
+    </h4>
+    </div>
+    <div *ngIf="!currentService">
+      <br />
+      <p>Selecione um serviço</p>
+    </div>
+  </div>
+  <ng-template #editable>
+    <div *ngIf="currentService.Id" class="edit-form">
+      <h4>Serviço</h4>
+      <form>
+        <div class="form-group">
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            [(ngModel)]="currentService.Name"
+            name="nome"
+          />
+        </div>
+        <div class="form-group">
+            <input
+              type="text"
+              class="form-control"
+              id="description"
+              [(ngModel)]="currentService.Description"
+              name="description"
+            />
+          </div>
+      </form>
+      <h4>
+      <button class="badge badge-danger mr-2" (click)="deleteService()">
+        Remover
+      </button>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updateService()"
+      >
+        Atualizar
+      </button>
+    </h4>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentService.Id">
+      <br />
+      <p>Não é possível acessar este serviço</p>
+    </div>
+  </ng-template>

@@ -1,0 +1,91 @@
+<div *ngIf="viewMode; else editable">
+    <div *ngIf="currentPerson.Id">
+      <h4>Integrante de Equipe</h4>
+      <div>
+        <label><strong>Nome:</strong></label> {{ currentPerson.UserName }}
+      </div>
+      <div>
+        <label><strong>E-mail:</strong></label>
+        {{ currentPerson.UserEmail }}
+      </div>
+      <div>
+        <label><strong>Status:</strong></label>
+        {{ currentPerson.IsDeleted ? "Inativo" : "Ativo" }}
+      </div>
+      <h4>
+      <a
+        class="badge badge-warning"
+        routerLink="/persons/{{ currentPerson.Id }}"
+      >
+        Editar
+      </a>
+    </h4>
+    </div>
+    <div *ngIf="!currentPerson">
+      <br />
+      <p>Selecione um integrante da equipe</p>
+    </div>
+  </div>
+  <ng-template #editable>
+    <div *ngIf="currentPerson.Id" class="edit-form">
+      <h4>Integrante de Equipe</h4>
+      <form>
+        <div class="form-group">
+          <label for="nome">Nome</label>
+          <input
+            type="text"
+            class="form-control"
+            id="nome"
+            [(ngModel)]="currentPerson.UserName"
+            name="nome"
+          />
+        </div>
+        <div class="form-group">
+          <label for="email">E-mail</label>
+          <input
+            type="text"
+            class="form-control"
+            id="email"
+            type="email"
+            [(ngModel)]="currentPerson.UserEmail"
+            name="email"
+          />
+        </div>
+        <div class="form-group">
+          <label><strong>Status:</strong></label>
+          {{ currentPerson.IsDeleted? "Inativo" : "Ativo" }}
+        </div>
+      </form>
+      <h4>
+      <button
+        class="badge badge-primary mr-2"
+        *ngIf="!currentPerson.IsDeleted"
+        (click)="updateDeleted(false)"
+      >
+      Desativar
+      </button>
+      <button
+        *ngIf="currentPerson.IsDeleted"
+        class="badge badge-primary mr-2"
+        (click)="updateDeleted(true)"
+      >
+        Ativar
+      </button>
+      <button class="badge badge-danger mr-2" (click)="deletePerson()">
+        Remover
+      </button>
+      <button
+        type="submit"
+        class="badge badge-success mb-2"
+        (click)="updatePerson()"
+      >
+        Atualizar
+      </button>
+    </h4>
+      <p>{{ message }}</p>
+    </div>
+    <div *ngIf="!currentPerson.Id">
+      <br />
+      <p>Não é possível acessar os dados deste membro da equipe</p>
+    </div>
+  </ng-template>
