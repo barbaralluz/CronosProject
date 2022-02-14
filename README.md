@@ -12,7 +12,7 @@ Projeto contendo painel administrativo simples, utilizando API C# e front-end An
 .NET Core 5
 Banco de Dados: SQLServer Express
 
-Dados: Foi utilizado migration para adicionar as tabelas e alguns registros no banco de dados
+Dados: Foi utilizado migration para adicionar as tabelas e o arquivo "Script Insert.sql" para adição de dados de teste nas tabelas
 
 Observação: Foi adicionado Swagger para a api, ao rodar o projeto, será executado por padrão: https://****/swagger/index.html
 
